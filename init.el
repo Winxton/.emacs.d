@@ -1,3 +1,10 @@
+;; autocomplete
+
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp//ac-dict")
+(ac-config-default)
+
 ;; general configurations
 (global-linum-mode 1)
 (global-auto-revert-mode t)
@@ -32,7 +39,6 @@
 (setq site-lisp-dir
       (expand-file-name "site-lisp" user-emacs-directory))
 
-(add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path site-lisp-dir)
 
 ;;(require 'appearance)
@@ -43,9 +49,3 @@
 ;; Load stuff on demand
 (autoload 'auto-complete-mode "auto-complete" nil t)
 
-;; autocomplete
-
-(add-to-list 'load-path "~/.emacs.d/")
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d//ac-dict")
-(ac-config-default)
